@@ -1,0 +1,32 @@
+<div class="container">
+  <div class="row">
+    <div class="col-xs-12">
+      <h3>Bind it!</h3>
+    </div>
+  </div>
+  <hr/>
+  <div class="row">
+    <h1 class="col-xs-12 text-uppercase text-center" style="margin-bottom: 2em">Get your game on!</h1>
+  </div>
+  <div class="row">
+    <div class="col-xs-12">
+      <app-game-control 
+      (evenCounter)="newEvenCount=$event"
+      (oddCounter)="newOddCount=$event"
+      (isOver)="gameOver=$event"></app-game-control>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-6">
+      <app-even [evenData]="newEvenCount"></app-even>
+    </div>
+    <div class="col-xs-6">
+      <app-odd [oddData]="newOddCount"></app-odd>
+    </div>
+  </div>
+  <div class="row">
+    <div class="col-xs-12 text-center font-weight-bold">
+        <h3 class="on" {[ngClass]="{'over': gameOver === 'clicked'}">GAME OVER!</h3>
+    </div>
+  </div>
+</div>
